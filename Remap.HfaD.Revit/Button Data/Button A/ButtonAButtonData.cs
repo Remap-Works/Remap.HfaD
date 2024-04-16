@@ -33,7 +33,7 @@ public class ButtonAButtonData : IButtonData
         this.Name = "BtnA";
         this.VisibleButtonName = "Button A";
         this.Tooltip = "";
-        this.IconName = null;
+        this.IconName = "RemapGreenIcon.ico";
     }
 
     /// <summary>Overload this method to implement and external command within Revit.</summary>

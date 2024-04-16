@@ -5,7 +5,7 @@
 		<RootNamespace>RemapHfaD</RootNamespace>
 		<AssemblyName>RemapHfaD</AssemblyName>
 		<TargetFramework>net48</TargetFramework>
-		<UseWPF>false</UseWPF>
+		<UseWPF>true</UseWPF>
 		<LangVersion>preview</LangVersion>
 		<VersionPrefix>0.0.1</VersionPrefix>
 		<Company>Remap Works Ltd</Company>
@@ -18,16 +18,30 @@
 		<Platforms>AnyCPU;x64</Platforms>
 	</PropertyGroup>
 	<ItemGroup>
+	  <None Remove="Resources\RemapGreenIcon.ico" />
+	  <None Remove="Resources\RemapPinkIcon.ico" />
+	  <None Remove="Resources\RemapPurpleIcon.ico" />
+	</ItemGroup>
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\RemapGreenIcon.ico" />
+	  <EmbeddedResource Include="Resources\RemapPinkIcon.ico" />
+	  <EmbeddedResource Include="Resources\RemapPurpleIcon.ico" />
+	</ItemGroup>
+	<ItemGroup>
 	  <Folder Include="Button Data\Button A\" />
 	  <Folder Include="Button Data\Button B\" />
 	  <Folder Include="Button Data\Button C\" />
 	  <Folder Include="Button Data\Button D\" />
+	  <Folder Include="Services\Revit Application Information\" />
 	  <Folder Include="Settings\" />
 	  <Folder Include="Ribbon\" />
 	  <Folder Include="Services\Assembly Manager\" />
 	</ItemGroup>
 	<ItemGroup>
 	  <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="2024.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Reference Include="System.Windows" />
 	</ItemGroup>
 
 	<Target Name="PostBuild" AfterTargets="PostBuildEvent">

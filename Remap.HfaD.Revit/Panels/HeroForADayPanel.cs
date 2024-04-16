@@ -1,4 +1,5 @@
-﻿using Autodesk.Revit.UI;
+﻿using System.Windows.Controls.Ribbon;
+using Autodesk.Revit.UI;
 
 namespace RemapHfaD;
 
@@ -35,6 +36,9 @@ public sealed class HeroForADayPanel : ToolbarPanel
     /// </summary>
     public override void Populate()
     {
-        //throw new System.NotImplementedException();
+        Buttons.AddButton(this.RibbonPanel, new ButtonAButtonData());
+        Buttons.AddButton(this.RibbonPanel, new ButtonBButtonData());
+        Buttons.AddButton(this.RibbonPanel, new ButtonCButtonData());
+        Buttons.AddButton(this.RibbonPanel, new ButtonDButtonData());
     }
 }

@@ -5,7 +5,7 @@ using Autodesk.Revit.UI;
 namespace RemapHfaD;
 
 [Transaction(TransactionMode.Manual)]
-public class ButtonCButtonData
+public class ButtonCButtonData : IButtonData
 {
     /// <summary>
     /// The non-visible button name
@@ -29,10 +29,10 @@ public class ButtonCButtonData
 
     public ButtonCButtonData()
     {
-        this.Name = "BtnA";
-        this.VisibleButtonName = "Button A";
+        this.Name = "BtnC";
+        this.VisibleButtonName = "Button C";
         this.Tooltip = "";
-        this.IconName = null;
+        this.IconName = "RemapPurpleIcon.ico";
     }
 
     /// <summary>Overload this method to implement and external command within Revit.</summary>
