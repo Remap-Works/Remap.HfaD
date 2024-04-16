@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RevitAddIns>
+	<AddIn Type="Application">
+		<Name>Remap</Name>
+		<Assembly>Remap\RemapHfaD.dll</Assembly>
+		<AddInId>8a79848a-56b0-4cbf-1234-4045aa317700</AddInId>
+		<FullClassName>RemapHfaD.HfaDRibbon</FullClassName>
+		<VendorId>Remap Works Ltd</VendorId>
+		<VendorDescription>Remap Works Ltd : Remapping a built environment industry that works for the 21st century. For more information visit https://www.remap.works.</VendorDescription>
+	</AddIn>
+</RevitAddIns>

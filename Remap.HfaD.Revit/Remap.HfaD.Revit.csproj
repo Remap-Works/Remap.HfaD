@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<ProjectGuid>{4D428E39-5AE1-46AD-9BBF-E53F90D343FA}</ProjectGuid>
+		<OutputType>Library</OutputType>
+		<RootNamespace>RemapHfaD</RootNamespace>
+		<AssemblyName>RemapHfaD</AssemblyName>
+		<TargetFramework>net48</TargetFramework>
+		<UseWPF>false</UseWPF>
+		<LangVersion>preview</LangVersion>
+		<VersionPrefix>0.0.1</VersionPrefix>
+		<Company>Remap Works Ltd</Company>
+		<Product>Remap for Revit</Product>
+		<Copyright>Copyright © Remap Works Ltd. 2024</Copyright>
+		<PlatformTarget>x64</PlatformTarget>
+		<Configurations>Debug2022;Debug2023;Debug2024;Release;</Configurations>
+		<GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+		<PackageCopyToOutput>true</PackageCopyToOutput>
+		<Platforms>AnyCPU;x64</Platforms>
+	</PropertyGroup>
+	<ItemGroup>
+	  <Folder Include="Button Data\Button A\" />
+	  <Folder Include="Button Data\Button B\" />
+	  <Folder Include="Button Data\Button C\" />
+	  <Folder Include="Button Data\Button D\" />
+	  <Folder Include="Settings\" />
+	  <Folder Include="Ribbon\" />
+	  <Folder Include="Services\Assembly Manager\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="2024.0.0" />
+	</ItemGroup>
+
+	<Target Name="PostBuild" AfterTargets="PostBuildEvent">
+		<ItemGroup>
+			<SourceDlls Include="$(TargetDir)*.dll" />
+			<SourcePdbs Include="$(TargetDir)*.pdb" />
+			<SourceAddin Include="$(ProctjectDir)RemapHfaD.addin" />
+		</ItemGroup>
+
+		<!--Revit 2022-->
+		<Copy SourceFiles="@(SourceAddin)" DestinationFolder="$(ProgramData)\Autodesk\Revit\Addins\2022\" />
+		<Copy SourceFiles="@(SourceDlls)" DestinationFolder="$(ProgramData)\Autodesk\Revit\Addins\2022\Remap\" />
+		<Copy SourceFiles="@(SourcePdbs)" DestinationFolder="$(ProgramData)\Autodesk\Revit\Addins\2022\Remap\" />
+		<!--Revit 2023-->
+		<Copy SourceFiles="@(SourceAddin)" DestinationFolder="$(ProgramData)\Autodesk\Revit\Addins\2023\" />
+		<Copy SourceFiles="@(SourceDlls)" DestinationFolder="$(ProgramData)\Autodesk\Revit\Addins\2023\Remap\" />
+		<Copy SourceFiles="@(SourcePdbs)" DestinationFolder="$(ProgramData)\Autodesk\Revit\Addins\2023\Remap\" />
+		<!--Revit 2024-->
+		<Copy SourceFiles="@(SourceAddin)" DestinationFolder="$(ProgramData)\Autodesk\Revit\Addins\2024\" />
+		<Copy SourceFiles="@(SourceDlls)" DestinationFolder="$(ProgramData)\Autodesk\Revit\Addins\2024\Remap\" />
+		<Copy SourceFiles="@(SourcePdbs)" DestinationFolder="$(ProgramData)\Autodesk\Revit\Addins\2024\Remap\" />
+
+	</Target>
+
+</Project>
